@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+
+.header {
+    padding-top: 18px;
+    padding-bottom: 19px;
+    background-color: #222222;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.menu_left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 41px;
+}
+
+.menu_right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top {
+    margin-bottom: 65px;
+    background-color: #F1E4E6;;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+    justify-items: center;
+}
+
+.top_title {
+    width: 377px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.top_title1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.top_title2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.top_intitle2 {
+    color: #F16D7F;
+}
+
+.middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.middle_item {
+    background-color: #211616B2;
+}
+
+.middle_item4 {
+    grid-column: span 3;
+}
+
+.content {
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_title {
+    margin-top: 96px;
+    margin-bottom: 6px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.content_subtitle {
+    margin-bottom: 49px;
+    width: 400px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.content_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.content_item {
+    background-color: #F7E4E2;
+    display: flex;
+    flex-direction: column;
+}
+
+.content_item_footer {
+    padding: 24px 16px;
+    background-color: #F8F8F8;
+}
+
+.content_item_title {
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.content_item_subtitle {
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.content_item_price {
+    color: #F16D7F;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer{
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_button {
+    padding: 15px 39px;
+    border-color: #FF6A6A;
+    color: #F26376;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
