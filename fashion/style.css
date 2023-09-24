@@ -171,13 +171,6 @@ body {
         min-width: 200px;    }
     .middle {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .middle_item3 {
-        grid-column: span 2;
-    }
-    .middle_item4 {
-        grid-column: span 2;
     }
     .middle_item img {
         width: 100%
