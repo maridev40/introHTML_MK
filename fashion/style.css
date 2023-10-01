@@ -81,7 +81,50 @@ body {
 }
 
 .middle_item {
-    background-color: #211616B2;
+    width: 100%;
+}
+
+.middle_item_flex {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle_img {
+    width: 100%;
+}
+
+.middle_ground {
+    width: 100%;
+    position: absolute;
+}
+
+.middle_ground_img {
+    opacity: 0.8;
+}
+
+.middle_text {
+       display: flex;
+       position: absolute;
+       font-size: 16px;
+       font-weight: 400;
+       width: 100%;
+       flex-direction: column;
+       align-items: center;
+}
+
+.middle_title {
+    font-size: 12px;
+    font-weight: 300;
+    color: white;
+}
+
+.middle_subtitle {
+    font-size: 18px;
+    font-weight: 900;
+    color: #F16D7F;
 }
 
 .middle_item4 {
@@ -89,7 +132,7 @@ body {
 }
 
 .middle_item img {
-    width: 100%
+    width: 100%;
 }
 
 .content {
@@ -278,11 +321,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* flex-wrap: wrap; */
 }
 
 .prom_email {
     padding-left: 20px;
     max-width: 256px;
+    /* min-width: 150px; */
     height: 49px;
     background-color: #E1E1E1;
     font-size: 14px;
@@ -293,7 +338,7 @@ body {
 }
 
 .prom_subscribe {
-    max-width: 100px;
+    min-width: 100px;
     height: 49px;
     font-size: 14px;
     font-weight: 400;
@@ -337,10 +382,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-    /* .center {
-        padding-left: calc(50% - 512px);
-        padding-right: calc(50% - 512px);
-    } */
 
     .header {
         background-color: #023013;
@@ -354,9 +395,6 @@ body {
     .top_title {
         min-width: 200px;    }
 
-    .middle_item img {
-        width: 100%
-    }
     .content_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -440,5 +478,17 @@ body {
     .top_title2 {
         font-size: 22px;
         font-weight: 700;
+    }
+    .menu_person {
+        display: none;
+    }
+    .menu_basket {
+        display: none;
+    }
+}
+
+@media (max-width: 319px) {
+    .header {
+        background-color: #856e82;
     }
 }
