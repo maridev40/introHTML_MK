@@ -1,0 +1,23 @@
+@mixin flexCenter($justifyContent: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: center;
+}
+
+@mixin flexLeft() {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin addToCartBlock($color: $colorTextLight) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 139px;
+    height: 44px;
+    border: 1px solid;
+    color: $color;
+    gap: 24px;
+}
