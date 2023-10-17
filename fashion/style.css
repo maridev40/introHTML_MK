@@ -18,6 +18,10 @@
   gap: 33px;
 }
 
+.header_menu__svg:hover path {
+  fill: #F16D7F;
+}
+
 .footer {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -30,6 +34,7 @@
   font-size: 16px;
   font-weight: 400;
   color: #FFF;
+  font-family: "latolight";
 }
 .footer_menu {
   display: flex;
@@ -57,24 +62,59 @@
   }
 }
 
+.product-box {
+  padding-bottom: 128px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .product-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 375px) {
+  .product-box {
+    grid-template-columns: 1fr;
+  }
+}
+
 .product {
-  padding-bottom: 20px;
+  outline: none;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   background-color: #F8F8F8;
 }
+@media (max-width: 767px) {
+  .product .product:last-child {
+    display: none;
+  }
+}
+.product:hover .product__cart_flex {
+  background-color: black;
+}
+.product:hover .product__img {
+  opacity: 0.5;
+}
+.product:hover .product__cart_block {
+  z-index: 8;
+}
+.product__content {
+  padding: 16px 16px;
+}
 .product__img {
-  margin-bottom: 24px;
   width: 100%;
 }
 .product__name {
   margin-bottom: 12px;
   font-size: 13px;
   font-weight: 400;
+  color: #000;
 }
 .product__text {
+  font-family: "latolight";
   margin-bottom: 18px;
   font-size: 14px;
   font-weight: 300;
@@ -91,6 +131,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 summary {
   display: block;
 }
@@ -104,7 +148,7 @@ a {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "latoblack", sans-serif;
 }
 
 .center {
@@ -112,8 +156,75 @@ body {
   padding-right: calc(50% - 570px);
 }
 
-.header_menu__svg:hover path {
-  fill: #F16D7F;
+.box-content {
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+}
+
+#burger {
+  left: -999999px;
+  visibility: hidden;
+}
+#burger:checked ~ .menu {
+  right: -232px;
+}
+
+.menu {
+  background: #FFF;
+  width: 232px;
+  padding: 32px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  transition: right 0.3s;
+  z-index: 20;
+}
+@media (max-width: 375px) {
+  .menu {
+    width: 116px;
+  }
+}
+.menu__summary {
+  display: flex;
+  align-items: center;
+}
+.menu__heading {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+}
+.menu[open] .menu__heading {
+  color: #F16D7F;
+}
+.menu__item {
+  margin-top: 16px;
+}
+.menu__item[open] .menu__head {
+  color: #F16D7F;
+}
+.menu__link-box {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 24px 16px;
+}
+.menu__head {
+  color: #636363;
+  font-size: 14px;
+  font-weight: 400;
+}
+.menu__link {
+  color: #6F6E6E;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "latolight";
+}
+.menu__link:hover {
+  color: #F16D7F;
 }
 
 .top {
@@ -231,13 +342,7 @@ body {
   max-width: 400px;
   font-size: 14px;
   font-weight: 400;
-}
-
-.content_grid {
-  margin-bottom: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
+  font-family: "latolight";
 }
 
 .content_item {
@@ -256,6 +361,8 @@ body {
 }
 
 .add_to_cart_block {
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -272,6 +379,29 @@ body {
 .add_to_cart {
   display: flex;
   width: 100%;
+}
+
+.product__cart_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.product__cart_block {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 139px;
+  height: 44px;
+  border: 1px solid;
+  color: #FFF;
+  gap: 24px;
+  position: absolute;
+  z-index: -10;
 }
 
 .content_item_img {
@@ -364,6 +494,7 @@ body {
   max-width: 360px;
   font-size: 13.972px;
   font-weight: 300;
+  font-family: "latolight";
 }
 
 .subscribe {
@@ -376,6 +507,7 @@ body {
   background-color: rgba(244, 244, 244, 0.6980392157);
   background-image: URL("img/ground3.png");
   background-blend-mode: overlay;
+  background-size: cover;
 }
 
 .phrase {
@@ -392,6 +524,7 @@ body {
   max-width: 360px;
   font-size: 20px;
   font-weight: 400;
+  font-family: "latolight";
 }
 
 .prom_title {
@@ -468,10 +601,6 @@ body {
   .middle_item4 {
     grid-column: span 2;
   }
-  .content_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
   .content_item img {
     width: 100%;
   }
@@ -508,10 +637,6 @@ body {
   }
   .middle_item4 {
     grid-column: span 1;
-  }
-  .content_grid {
-    display: grid;
-    grid-template-columns: 1fr;
   }
   .menu_person {
     display: none;
@@ -643,6 +768,7 @@ body {
   text-align: center;
   font-size: 14px;
   font-weight: 300;
+  font-family: "latolight";
 }
 .info-product__price {
   margin-bottom: 52px;
@@ -673,6 +799,8 @@ body {
   gap: 8px;
 }
 .info-product__add_to_cart {
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -682,7 +810,7 @@ body {
   border: 1px solid;
   color: #F16D7F;
   gap: 24px;
-  width: 212px;
+  width: 200px;
   height: 48px;
 }
 
@@ -694,32 +822,9 @@ body {
   fill: #FFF;
 }
 
-.product-box {
-  padding-bottom: 128px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-}
-@media (max-width: 767px) {
-  .product-box {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 375px) {
-  .product-box {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 767px) {
-  .product:last-child {
-    display: none;
-  }
-}
-
 .filter-sort {
-  height: 80px;
-  padding-top: 15px;
+  padding-top: 20px;
+  height: 100px;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -760,9 +865,9 @@ body {
   margin-top: 16px;
 }
 .filter__heading {
-  color: #6F6E6E;
+  color: #000;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
 }
 @media (max-width: 375px) {
   .filter__heading {
@@ -779,6 +884,7 @@ body {
   color: #6F6E6E;
   font-size: 14px;
   font-weight: 400;
+  font-family: "latolight";
 }
 .filter__link:hover {
   color: #F16D7F;
@@ -821,6 +927,7 @@ body {
   font-family: Roboto;
   font-size: 14px;
   font-weight: 400;
+  font-family: "latolight";
 }
 .sort__heading {
   color: #6F6E6E;

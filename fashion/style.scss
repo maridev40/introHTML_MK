@@ -9,6 +9,12 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
+
 summary {
     display: block;
 }
@@ -22,7 +28,7 @@ a {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'latoblack', sans-serif;
 }
 
 .center {
@@ -30,8 +36,84 @@ body {
     padding-right: calc(50% - $siteCalcWidth / 2);
 }
 
-.header_menu__svg:hover path {
-    fill: $colorSelection;
+.box-content {
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+}
+
+#burger {
+    left: -999999px;
+    visibility: hidden;
+
+    &:checked~.menu {
+        right: -$burgerMenuWidth;
+    }
+}
+
+.menu {
+    background: #FFF;
+    width: $burgerMenuWidth;
+    padding: 32px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    transition: right .3s;
+    z-index: 20;
+
+    @media (max-width: $phoneWidth) {
+        width: $burgerMenuWidth / 2;
+    }
+
+    &__summary {
+        display: flex;
+        align-items: center;
+    }
+
+    &__heading {
+        color: #000;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    &[open] &__heading {
+        color: $colorSelection;
+    }
+
+    &__item {
+        margin-top: 16px;
+    }
+
+    &__item[open] .menu__head {
+        color: $colorSelection;
+    }
+
+    &__link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+
+    &__head {
+        color: #636363;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__link {
+        color: #6F6E6E;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'latolight';
+
+        &:hover {
+            color: $colorSelection;
+        }
+    }
 }
 
 .top {
@@ -147,13 +229,7 @@ body {
     max-width: 400px;
     font-size: 14px;
     font-weight: 400;
-}
-
-.content_grid {
-    margin-bottom: 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    font-family: 'latolight';
 }
 
 .content_item {
@@ -176,6 +252,17 @@ body {
 .add_to_cart {
     display: flex;
     width: 100%;
+}
+
+.product__cart_flex {
+    @include flexCenter();
+    position: relative;
+}
+
+.product__cart_block {
+    @include addToCartBlock($colorTextLight);
+    position: absolute;
+    z-index: -10;
 }
 
 .content_item_img {
@@ -274,6 +361,7 @@ body {
         max-width: 360px;
         font-size: 13.972px;
         font-weight: 300;
+        font-family: 'latolight';
     }
 }
 
@@ -287,6 +375,7 @@ body {
     background-color: $colorBackBlend;
     background-image: URL("img/ground3.png");
     background-blend-mode: overlay;
+    background-size: cover;
 }
 
 .phrase {
@@ -303,6 +392,7 @@ body {
     max-width: 360px;
     font-size: 20px;
     font-weight: 400;
+    font-family: 'latolight';
 }
 
 .prom_title {
@@ -387,11 +477,6 @@ body {
         grid-column: span 2;
     }
 
-    .content_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
     .content_item img {
         width: 100%;
     }
@@ -437,11 +522,6 @@ body {
 
     .middle_item4 {
         grid-column: span 1;
-    }
-
-    .content_grid {
-        display: grid;
-        grid-template-columns: 1fr;
     }
 
     .menu_person {
@@ -578,6 +658,7 @@ body {
         text-align: center;
         font-size: 14px;
         font-weight: 300;
+        font-family: 'latolight';
     }
 
     &__price {
@@ -611,7 +692,7 @@ body {
 
     &__add_to_cart {
         @include addToCartBlock($colorSelection);
-        width: 212px;
+        width: 200px;
         height: 48px;
     }
 }
@@ -625,32 +706,9 @@ body {
     }
 }
 
-.product-box {
-    padding-bottom: 128px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-
-    @media (max-width: $tabletWidth) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media (max-width: $phoneWidth) {
-        grid-template-columns: 1fr;
-    }
-}
-
-.product {
-    @media (max-width: $tabletWidth) {
-        &:last-child {
-            display: none;
-        }
-    }
-}
-
 .filter-sort {
-    height: 80px;
-    padding-top: 15px;
+    padding-top: 20px;
+    height: 100px;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -698,9 +756,9 @@ body {
     }
 
     &__heading {
-        color: #6F6E6E;
+        color: #000;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 600;
 
         @media (max-width: $phoneWidth) {
             display: none;
@@ -718,6 +776,7 @@ body {
         color: #6F6E6E;
         font-size: 14px;
         font-weight: 400;
+        font-family: 'latolight';
 
         &:hover {
             color: $colorSelection;
@@ -767,6 +826,7 @@ body {
         font-family: Roboto;
         font-size: 14px;
         font-weight: 400;
+        font-family: 'latolight';
     }
 
     &__heading {
