@@ -7,7 +7,13 @@
 @mixin flexLeft() {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+}
+
+@mixin flexRight() {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 @mixin addToCartBlock($color: $colorTextLight) {
