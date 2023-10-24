@@ -1151,6 +1151,12 @@ body {
   .service {
     flex-direction: column;
   }
+  .service__icon path {
+    fill: #FFF;
+  }
+  .service__flex:hover path {
+    fill: #F16D7F;
+  }
   .subscribe {
     flex-direction: column;
     gap: 48px;

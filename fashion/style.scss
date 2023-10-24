@@ -55,6 +55,14 @@
 
     .service {
         flex-direction: column;
+
+        &__icon path {
+            fill: $colorTextLight;
+        }
+
+        &__flex:hover path {
+            fill: $colorSelection;
+        }
     }
 
     .subscribe {
