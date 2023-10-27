@@ -5,7 +5,10 @@
     gap: 30px;
 
     @media (max-width: $tabletWidth) {
+        margin-left: 16px;
+        margin-right: 16px;
         grid-template-columns: 1fr 1fr;
+        gap: 16px;
     }
 
     @media (max-width: $phoneWidth) {
@@ -20,7 +23,7 @@
     background-color: #F8F8F8;
 
     @media (max-width: $tabletWidth) {
-        .product:last-child {
+        &:last-child {
             display: none;
         }
     }

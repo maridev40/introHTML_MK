@@ -12,6 +12,7 @@
     }
 
     &__first {
+        margin-left: 16px;
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -38,19 +39,35 @@
             font-size: 24px;
             font-weight: 400;
             font-family: 'latoblack';
+
+            @media (max-width: $phoneWidth) {
+                font-size: 16px;
+            }
         }
 
         &_label {
             padding-bottom: 6px;
+
+            @media (max-width: $phoneWidth) {
+                font-size: 16px;
+            }
         }
 
         &_price {
             color: $colorSelection;
+
+            @media (max-width: $phoneWidth) {
+                font-size: 16px;
+            }
         }
 
         &_quantity {
             @include flexLeft();
             flex-direction: row;
+
+            @media (max-width: $phoneWidth) {
+                font-size: 16px;
+            }
         }
 
         // &__value {}
@@ -70,9 +87,8 @@
         justify-content: space-between;
         font-family: 'latolight';
 
-        @media (max-width: $tabletWidth) {
-            justify-content: center;
-            gap: 48px;
+        @media (max-width: $phoneWidth) {
+            font-size: 12px;
         }
 
         &_button {
@@ -90,13 +106,19 @@
     }
 
     &__second {
-        margin-left: 15px;
+        margin-left: 16px;
+        margin-right: 16px;
         display: flex;
         flex-direction: column;
 
         @media (max-width: $tabletWidth) {
             display: flex;
             flex-direction: row;
+        }
+
+        @media (max-width: $phoneWidth) {
+            display: flex;
+            flex-direction: column;
         }
     }
 

@@ -143,10 +143,20 @@ body {
   align-items: center;
   background-color: #F8F3F4;
 }
+@media (max-width: 1024px) {
+  .top-head {
+    gap: 16px;
+  }
+}
 .top-head__heading {
   color: #F16D7F;
   font-size: 24px;
   font-weight: 400;
+}
+@media (max-width: 1024px) {
+  .top-head__heading {
+    margin-left: 16px;
+  }
 }
 
 .breadcrumbs {
@@ -158,6 +168,11 @@ body {
 }
 .breadcrumbs__link {
   color: #636363;
+}
+@media (max-width: 1024px) {
+  .breadcrumbs__link {
+    margin-right: 16px;
+  }
 }
 .breadcrumbs__link:hover {
   color: #F16D7F;
@@ -487,7 +502,7 @@ body {
   padding-top: 96px;
   padding-bottom: 128px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .basket-content {
     display: flex;
     flex-direction: column;
@@ -495,6 +510,7 @@ body {
   }
 }
 .basket-content__first {
+  margin-left: 16px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -505,7 +521,7 @@ body {
   max-width: 650px;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .basket-content__card {
     max-width: 730px;
   }
@@ -521,17 +537,37 @@ body {
   font-weight: 400;
   font-family: "latoblack";
 }
+@media (max-width: 375px) {
+  .basket-content__card_title {
+    font-size: 16px;
+  }
+}
 .basket-content__card_label {
   padding-bottom: 6px;
 }
+@media (max-width: 375px) {
+  .basket-content__card_label {
+    font-size: 16px;
+  }
+}
 .basket-content__card_price {
   color: #F16D7F;
+}
+@media (max-width: 375px) {
+  .basket-content__card_price {
+    font-size: 16px;
+  }
 }
 .basket-content__card_quantity {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+}
+@media (max-width: 375px) {
+  .basket-content__card_quantity {
+    font-size: 16px;
+  }
 }
 .basket-content__card_input {
   border: 1px solid #EAEAEA;
@@ -545,10 +581,9 @@ body {
   justify-content: space-between;
   font-family: "latolight";
 }
-@media (max-width: 767px) {
+@media (max-width: 375px) {
   .basket-content__control {
-    justify-content: center;
-    gap: 48px;
+    font-size: 12px;
   }
 }
 .basket-content__control_button {
@@ -565,14 +600,21 @@ body {
   background-color: #F16D7F;
 }
 .basket-content__second {
-  margin-left: 15px;
+  margin-left: 16px;
+  margin-right: 16px;
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .basket-content__second {
     display: flex;
     flex-direction: row;
+  }
+}
+@media (max-width: 375px) {
+  .basket-content__second {
+    display: flex;
+    flex-direction: column;
   }
 }
 .basket-content__checkout {
@@ -581,7 +623,7 @@ body {
   flex-direction: column;
   font-family: "latolight";
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .basket-content__checkout {
     max-width: 360px;
     margin-left: 1px;
@@ -640,7 +682,7 @@ body {
   gap: 20px;
   width: 100%;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .basket-content__shipping {
     max-width: 360px;
   }
@@ -717,7 +759,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .service__flex {
     margin-top: 0;
     margin-bottom: 0;
@@ -820,9 +862,12 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .product-box {
+    margin-left: 16px;
+    margin-right: 16px;
     grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 }
 @media (max-width: 375px) {
@@ -839,8 +884,8 @@ body {
   flex-direction: column;
   background-color: #F8F8F8;
 }
-@media (max-width: 767px) {
-  .product .product:last-child {
+@media (max-width: 1024px) {
+  .product:last-child {
     display: none;
   }
 }
@@ -942,7 +987,7 @@ body {
   margin-top: -40px;
   background-color: #FFF;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .info-product__flex {
     margin-top: -20px;
   }
@@ -1098,7 +1143,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .registration-content__loyalty {
     font-size: 16px;
   }
@@ -1115,7 +1160,7 @@ body {
   margin-bottom: 20px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .center {
     padding-left: calc(50% - 734px);
     padding-right: calc(50% - 734px);
